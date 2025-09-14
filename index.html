@@ -1075,13 +1075,13 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <!-- ========== SISTEMA COMPLETO DE NOTIFICAÇÕES ========== -->
     <script>
         // ========== SISTEMA ORIGINAL (SIMPLES) ==========             
-        const nomes = ["Fabinho", "Adriano", "Athur", "Marcos", "Isabelle", "Bella", "Ana", "Vitor", "Rafael", "Matheus", "Juliana", "Rafaela", "kauane" 'João Silva',
-                      'Maria Santos', 'Pedro Oliveira', 'Ana Costa', 'Carlos Souza',
-                    'Fernanda Lima', 'Gabriel Alves', 'Juliana Ferreira', 'Rafael Martins', 'Camila Rocha',
-                    'Lucas Pereira', 'Beatriz Carvalho', 'Thiago Ribeiro', 'Larissa Gomes', 'Felipe Barbosa',
-                    'Mariana Dias', 'Bruno Nascimento', 'Isabela', 'Diego Araújo', 'Amanda Correia',
-                    'Mateus Teixeira', 'Natália Monteiro', 'Vinicius Castro', 'Letícia Moreira', 'André Fonseca',
-                    'Bruna Cavalcanti', 'Guilherme Pinto', 'Yasmin Nunes', 'Leonardo Freitas', 'Stephanie Ramos'
+        const nomes = ["Fabinho", "Adriano", "Athur", "Marcos", "Isabelle", "Bella", "Ana", "Vitor", "Rafael", "Matheus", "Juliana", "Rafaela", "kauane" "João Silva",
+                      "Maria Santos", "Pedro Oliveira", "Ana Costa", "Carlos Souza",
+                    "Fernanda Lima", "Gabriel Alves", "Juliana Ferreira", "Rafael Martins", "Camila Rocha",
+                    "Lucas Pereira", "Beatriz Carvalho", "Thiago Ribeiro", "Larissa Gomes", "Felipe Barbosa",
+                    "Mariana Dias", "Bruno Nascimento", "Isabella", "Diego Araújo", "Amanda",
+                    "Mateus Teixeira", "Natália Monteiro", "Vinicius Castro", "Letícia", "André Fonseca",
+                    "Bruna Cavalcanti", "Guilherme Pinto", "Yasmin Nunes", "Leonardo Freitas", "Stephanie Ramos"
                 ];
         
                this.products = [
@@ -1089,7 +1089,16 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
                     { name: 'Painel XIT Android', price: 'R$ 29,90' },
                     { name: 'Painel XIT 2 em 1 Completo', price: 'R$ 47,90' }
                 ];
-                
+                    getRandomTime() {
+                const options = [
+                    'agora mesmo',
+                    '1 minuto atrás',
+                    '2 minutos atrás',
+                    '3 minutos atrás',
+                    '5 minutos atrás',
+                    '7 minutos atrás',
+                    '10 minutos atrás'
+                ];
         const acoes = [
             "Aproveitou a Promoção",
             "Comprou Painel xit",
@@ -1120,179 +1129,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             mostrarNotificacao();
             const tempo = Math.floor(Math.random() * 7000) + 8000;
             setTimeout(loopNotificacoes, tempo);
-        }
-
-        // ========== SISTEMA AVANÇADO DE NOTIFICAÇÕES DE COMPRAS ==========
-        class PurchaseNotificationSystem {
-            constructor() {
-                this.container = document.getElementById('notification-container');
-                this.salesCounter = document.getElementById('sales-count');
-                this.currentSales = 127;
-                this.isActive = true;
-                
-                // Lista de nomes brasileiros realistas
-                this.names = [
-                    'João Silva', 'Maria Santos', 'Pedro Oliveira', 'Ana Costa', 'Carlos Souza',
-                    'Fernanda Lima', 'Gabriel Alves', 'Juliana Ferreira', 'Rafael Martins', 'Camila Rocha',
-                    'Lucas Pereira', 'Beatriz Carvalho', 'Thiago Ribeiro', 'Larissa Gomes', 'Felipe Barbosa',
-                    'Mariana Dias', 'Bruno Nascimento', 'Isabela Cardoso', 'Diego Araújo', 'Amanda Correia',
-                    'Mateus Teixeira', 'Natália Monteiro', 'Vinicius Castro', 'Letícia Moreira', 'André Fonseca',
-                    'Bruna Cavalcanti', 'Guilherme Pinto', 'Yasmin Nunes', 'Leonardo Freitas', 'Stephanie Ramos'
-                ];
-                
-                // Produtos disponíveis adaptados para seu site
-                this.products = [
-                    { name: 'Painel XIT iPhone/iOS', price: 'R$ 29,90' },
-                    { name: 'Painel XIT Android', price: 'R$ 29,90' },
-                    { name: 'Painel XIT 2 em 1 Completo', price: 'R$ 47,90' }
-                ];
-                
-                // Cidades brasileiras
-                this.cities = [
-                    'São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Salvador', 'Brasília',
-                    'Fortaleza', 'Curitiba', 'Recife', 'Porto Alegre', 'Manaus',
-                    'Belém', 'Goiânia', 'Guarulhos', 'Campinas', 'São Luís',
-                    'Maceió', 'Duque de Caxias', 'Natal', 'Teresina', 'São Bernardo',
-                    'Nova Iguaçu', 'João Pessoa', 'Santos', 'Ribeirão Preto', 'Uberlândia'
-                ];
-                
-                this.init();
-            }
-            
-            init() {
-                // Primeira notificação após 3 segundos
-                setTimeout(() => {
-                    this.showNotification();
-                }, 3000);
-                
-                // Notificações regulares a cada 8-15 segundos
-                this.scheduleNextNotification();
-                
-                // Atualizar contador de vendas
-                this.updateSalesCounter();
-            }
-            
-            scheduleNextNotification() {
-                if (!this.isActive) return;
-                
-                const delay = Math.random() * 7000 + 8000; // 8-15 segundos
-                setTimeout(() => {
-                    this.showNotification();
-                    this.scheduleNextNotification();
-                }, delay);
-            }
-            
-            showNotification() {
-                if (!this.isActive) return;
-                
-                const name = this.getRandomName();
-                const product = this.getRandomProduct();
-                const city = this.getRandomCity();
-                const timeAgo = this.getRandomTime();
-                
-                const notification = this.createNotificationElement(name, product, city, timeAgo);
-                this.container.appendChild(notification);
-                
-                // Mostrar notificação
-                setTimeout(() => {
-                    notification.classList.add('show', 'animate-in');
-                }, 100);
-                
-                // Remover após 6 segundos
-                setTimeout(() => {
-                    this.hideNotification(notification);
-                }, 6000);
-                
-                // Atualizar contador
-                this.incrementSalesCounter();
-            }
-            
-            createNotificationElement(name, product, city, timeAgo) {
-                const notification = document.createElement('div');
-                notification.className = 'purchase-notification';
-                
-                notification.innerHTML = `
-                    <button class="notification-close" onclick="this.parentElement.remove()">×</button>
-                    <div class="notification-header">
-                        <div class="notification-icon">
-                            <i class="fas fa-check"></i>
-                        </div>
-                        <div class="notification-content">
-                            <h4>Nova Compra Realizada!</h4>
-                            <p><strong>${name}</strong> de <strong>${city}</strong> acabou de comprar o <span class="notification-product">${product.name}</span> por <strong>${product.price}</strong></p>
-                        </div>
-                    </div>
-                    <div class="notification-time">
-                        <i class="fas fa-clock"></i> ${timeAgo}
-                    </div>
-                `;
-                
-                return notification;
-            }
-            
-            hideNotification(notification) {
-                notification.classList.remove('show');
-                setTimeout(() => {
-                    if (notification.parentElement) {
-                        notification.remove();
-                    }
-                }, 500);
-            }
-            
-            getRandomName() {
-                return this.names[Math.floor(Math.random() * this.names.length)];
-            }
-            
-            getRandomProduct() {
-                return this.products[Math.floor(Math.random() * this.products.length)];
-            }
-            
-            getRandomCity() {
-                return this.cities[Math.floor(Math.random() * this.cities.length)];
-            }
-            
-            getRandomTime() {
-                const options = [
-                    'agora mesmo',
-                    '1 minuto atrás',
-                    '2 minutos atrás',
-                    '3 minutos atrás',
-                    '5 minutos atrás',
-                    '7 minutos atrás',
-                    '10 minutos atrás'
-                ];
-                return options[Math.floor(Math.random() * options.length)];
-            }
-            
-            incrementSalesCounter() {
-                // Incrementar vendas ocasionalmente
-                if (Math.random() < 0.3) {
-                    this.currentSales++;
-                    this.updateSalesCounter();
-                }
-            }
-            
-            updateSalesCounter() {
-                if (this.salesCounter) {
-                    this.salesCounter.textContent = this.currentSales;
-                }
-            }
-            
-            // Métodos para controlar o sistema
-            pause() {
-                this.isActive = false;
-            }
-            
-            resume() {
-                this.isActive = true;
-                this.scheduleNextNotification();
-            }
-            
-            stop() {
-                this.isActive = false;
-                const notifications = document.querySelectorAll('.purchase-notification');
-                notifications.forEach(notification => notification.remove());
-            }
         }
         
         // ========== INICIALIZAÇÃO DOS SISTEMAS ==========
