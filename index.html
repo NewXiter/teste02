@@ -104,41 +104,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     }
 
     <style>
-      
-      /* Efeito de fogo animado para elementos com classe 'fire' */
-.fire {
-  position: relative;
-  display: inline-block;
-  padding-left: 40px; /* espaço para as chamas */
-  color: #fff; /* cor do texto, pode ajustar */
-  font-weight: bold;
-}
-
-/* Pseudo-elemento para as chamas */
-.fire::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 30px;
-  height: 30px;
-  background: radial-gradient(circle at 50% 50%, #ff6f00, transparent);
-  border-radius: 50%;
-  transform: translateY(-50%) scale(1);
-  animation: fogo 1.5s infinite alternate;
-}
-
-/* Animação de fogo, simulando chamas pulsantes */
-@keyframes fogo {
-  0% {
-    box-shadow: 0 0 10px #ff6f00, 0 0 20px #ff6f00, 0 0 30px #ff6f00;
-    transform: translateY(-50%) scale(1);
-  }
-  100% {
-    box-shadow: 0 0 20px #ff6f00, 0 0 40px #ff6f00, 0 0 60px #ff6f00;
-    transform: translateY(-50%) scale(1.2);
-  }
-
         body {
             background-color: #000;
             color: white;
@@ -612,15 +577,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         </p>
         <hr style="border-color: #00ff00;">
          <ul class="lista-beneficios mb-4" style="list-style: none; padding-left: 0; text-align: left;">
-               <section id="pricesec" class="pricing">
-    <div class="container">
-      <div class="pricing-wrap">
-   <ul class="checks">
-            <li class="fire"><i class="fa-solid fa-fire-flame-curved"></i> Painel Mod Menu</li>
-            <li class="fire"><i class="fa-solid fa-fire-flame-curved"></i> 2x Xitada + 2x Automática</li>
-            <li class="fire"><i class="fa-solid fa-fire-flame-curved"></i> Rastreamento pr cabeça</li>
-            <li class="fire"><i class="fa-solid fa-fire-flame-curved"></i> Função HS pescoço + Bypass</li>
-            <li class="fire"><i class="fa-solid fa-fire-flame-curved"></i> Mira automática 100% capa</li>
             <li> <i class="bi bi-check-circle-fill star-green"></i> Função HS pescoço + Bypass</li>
             <li> <i class="bi bi-check-circle-fill star-green"></i> Mira automática 100% capa</li>
             <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Automática</li>
@@ -791,10 +747,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             <div class="col-12 col-md-6">
                 <h4 class="mb-3">Garantia de Satisfação</h4>
                 <p class="fs-5">
-                    <li class="fire"><i class="fa-solid fa-fire-flame-curved"></i> </li>
-<li class="fire"><i class="fa-solid fa-fire-flame-curved"></i> 
-<!-- e assim por diante -->
-
                     Você tem <strong>7 dias de garantia</strong> para testar tudo sem compromisso. se não ficar satisfeito
                     Seu dinheiro de volta sem perguntas até 7 dias após a compra. <br><br>
                 </p>
@@ -934,43 +886,97 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <!-- TikTok Pixel Code End -->
 
             
+<div id="notificacoes"></div>
+
+
+            
+<style>
+#notificacoes {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.notificacao {
+  background-color: rgba(0, 150, 136, 0.9);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  min-width: 250px;
+  max-width: 350px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards, fadeOut 0.5s forwards 4.5s;
+  position: relative;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+</style>
+
+            
     <script>
-        const nomes = ["Fabinho", "Adriano", "Athur", "Marcos", "Isabelle", "Bella", "Ana", "Vitor", "Rafael", "Matheus", "Juliana", "Rafaela", "kauane",];
-        const acoes = [
-            "Aproveitou a Promoção",
-            "Comprou Painel",
-            "Acabou de adquirir",
-            "Realizou uma Compra",
-            "Confirmou o Pagamento"
-        ];
+const nomes = ["Fabinho", "Adriano", "Athur", "Marcos", "Isabelle", "Bella", "Ana", "Vitor", "Rafael", "Matheus", "Juliana", "Rafaela", "Kauane"];
+const acoes = [
+  "aproveitou a promoção",
+  "comprou o produto",
+  "acabou de adquirir",
+  "realizou uma compra",
+  "confirmou o pagamento"
+];
 
-        function mostrarNotificacao() {
-            const nome = nomes[Math.floor(Math.random() * nomes.length)];
-            const acao = acoes[Math.floor(Math.random() * acoes.length)];
-            const mensagem = `${nome} ${acao}`;
+function mostrarNotificacao() {
+  const nome = nomes[Math.floor(Math.random() * nomes.length)];
+  const acao = acoes[Math.floor(Math.random() * acoes.length)];
+  const mensagem = `${nome} ${acao}`;
 
-            const notificacao = document.createElement("div");
-            notificacao.className = "notificacao";
-            notificacao.innerHTML = `<i class="bi bi-check-circle" style="margin-right: 8px;"></i> ${mensagem}`;
+  const notificacao = document.createElement("div");
+  notificacao.className = "notificacao";
+  notificacao.innerHTML = `<i class="bi bi-check-circle-fill" style="margin-right:8px; color:#fff;"></i> ${mensagem}`;
 
-            document.getElementById("notificacoes").appendChild(notificacao);
+  const container = document.getElementById("notificacoes");
+  container.appendChild(notificacao);
 
-            setTimeout(() => {
-                notificacao.remove();
-            }, 5000);
-        }
+  // Remover após 5 segundos
+  setTimeout(() => {
+    // Inicia a animação de saída
+    notificacao.style.animation = 'fadeOut 0.5s forwards';
+    // Remove o elemento após a animação
+    notificacao.addEventListener('animationend', () => {
+      notificacao.remove();
+    });
+  }, 5000);
+}
 
-        function loopNotificacoes() {
-            mostrarNotificacao();
-            const tempo = Math.floor(Math.random() * 7000) + 8000;
-            setTimeout(loopNotificacoes, tempo);
-        }
+function loopNotificacoes() {
+  mostrarNotificacao();
+  const tempo = Math.floor(Math.random() * 7000) + 8000; // entre 8-15s
+  setTimeout(loopNotificacoes, tempo);
+}
 
-        window.onload = loopNotificacoes;
-    </script>
+window.onload = () => {
+  loopNotificacoes();
+};
+</script>
 
-
-    </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
