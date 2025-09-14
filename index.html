@@ -1074,14 +1074,30 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     <!-- ========== SISTEMA COMPLETO DE NOTIFICAÇÕES ========== -->
     <script>
-        // ========== SISTEMA ORIGINAL (SIMPLES) ==========
-        const nomes = ["Fabinho", "Adriano", "Athur", "Marcos", "Isabelle", "Bella", "Ana", "Vitor", "Rafael", "Matheus", "Juliana", "Rafaela", "kauane"];
+        // ========== SISTEMA ORIGINAL (SIMPLES) ==========             
+        const nomes = ["Fabinho", "Adriano", "Athur", "Marcos", "Isabelle", "Bella", "Ana", "Vitor", "Rafael", "Matheus", "Juliana", "Rafaela", "kauane" 'João Silva',
+                      'Maria Santos', 'Pedro Oliveira', 'Ana Costa', 'Carlos Souza',
+                    'Fernanda Lima', 'Gabriel Alves', 'Juliana Ferreira', 'Rafael Martins', 'Camila Rocha',
+                    'Lucas Pereira', 'Beatriz Carvalho', 'Thiago Ribeiro', 'Larissa Gomes', 'Felipe Barbosa',
+                    'Mariana Dias', 'Bruno Nascimento', 'Isabela', 'Diego Araújo', 'Amanda Correia',
+                    'Mateus Teixeira', 'Natália Monteiro', 'Vinicius Castro', 'Letícia Moreira', 'André Fonseca',
+                    'Bruna Cavalcanti', 'Guilherme Pinto', 'Yasmin Nunes', 'Leonardo Freitas', 'Stephanie Ramos'
+                ];
+        
+               this.products = [
+                    { name: 'Painel XIT iPhone/iOS', price: 'R$ 29,90' },
+                    { name: 'Painel XIT Android', price: 'R$ 29,90' },
+                    { name: 'Painel XIT 2 em 1 Completo', price: 'R$ 47,90' }
+                ];
+                
         const acoes = [
             "Aproveitou a Promoção",
-            "Comprou Painel",
-            "Acabou de adquirir",
-            "Realizou uma Compra",
-            "Confirmou o Pagamento",
+            "Comprou Painel xit",
+            "Acabou de adquirir Painel CLT",
+            "Realizou uma Compra de R$49,90",
+            "Realizou uma Compra de R$29,90",
+            "Confirmou o Pagamento de R$29,90",
+            "Usou CUPOM: New sensi",
         ];
 
         function mostrarNotificacao() {
