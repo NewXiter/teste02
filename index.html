@@ -104,6 +104,41 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     }
 
     <style>
+      
+      /* Efeito de fogo animado para elementos com classe 'fire' */
+.fire {
+  position: relative;
+  display: inline-block;
+  padding-left: 40px; /* espaço para as chamas */
+  color: #fff; /* cor do texto, pode ajustar */
+  font-weight: bold;
+}
+
+/* Pseudo-elemento para as chamas */
+.fire::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle at 50% 50%, #ff6f00, transparent);
+  border-radius: 50%;
+  transform: translateY(-50%) scale(1);
+  animation: fogo 1.5s infinite alternate;
+}
+
+/* Animação de fogo, simulando chamas pulsantes */
+@keyframes fogo {
+  0% {
+    box-shadow: 0 0 10px #ff6f00, 0 0 20px #ff6f00, 0 0 30px #ff6f00;
+    transform: translateY(-50%) scale(1);
+  }
+  100% {
+    box-shadow: 0 0 20px #ff6f00, 0 0 40px #ff6f00, 0 0 60px #ff6f00;
+    transform: translateY(-50%) scale(1.2);
+  }
+
         body {
             background-color: #000;
             color: white;
@@ -577,6 +612,10 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         </p>
         <hr style="border-color: #00ff00;">
          <ul class="lista-beneficios mb-4" style="list-style: none; padding-left: 0; text-align: left;">
+             <li class="fire"><i class="fa-solid fa-fire-flame-curved"></i> Painel Mod Menu</li>
+<li class="fire"><i class="fa-solid fa-fire-flame-curved"></i> 2x Xitada + 2x Automática</li>
+<li class="fire"><i class="fa-solid fa-fire-flame-curved"></i> Rastreamento pra cabeça</li>
+<!-- e assim por diante -->
             <li> <i class="bi bi-check-circle-fill star-green"></i> Função HS pescoço + Bypass</li>
             <li> <i class="bi bi-check-circle-fill star-green"></i> Mira automática 100% capa</li>
             <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Automática</li>
