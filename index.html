@@ -167,75 +167,9 @@
             50% { opacity: 0.3; transform: translateY(-50%) scale(1.2); }
         }
 
-        /* TIMER DE ESCASSEZ PREMIUM */
-        .scarcity-timer {
-            position: fixed;
-            top: 90px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gradient-danger);
-            color: #fff;
-            padding: 15px 25px;
-            border-radius: 40px;
-            font-family: 'Orbitron', monospace;
-            font-size: 1.4rem;
-            font-weight: 900;
-            box-shadow: var(--shadow-red);
-            z-index: 9998;
-            animation: timer-critical 1s infinite;
-            border: 3px solid rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(15px);
-        }
-
-        @keyframes timer-critical {
-            0%, 100% { transform: translateX(-50%) scale(1); }
-            50% { transform: translateX(-50%) scale(1.08); }
-        }
-
-        .timer-digit {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 8px 12px;
-            border-radius: 8px;
-            margin: 0 3px;
-            font-weight: 900;
-            min-width: 35px;
-            display: inline-block;
-            text-align: center;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .timer-label {
-            font-size: 0.9rem;
-            display: block;
-            margin-top: 5px;
-            opacity: 0.9;
-        }
-
-        /* FLOATING ELEMENTS */
-        .floating-discount {
-            position: fixed;
-            top: 50%;
-            right: -150px;
-            transform: translateY(-50%) rotate(-90deg);
-            background: var(--gradient-gold);
-            color: #000;
-            padding: 15px 30px;
-            font-family: 'Bebas Neue', cursive;
-            font-size: 1.3rem;
-            font-weight: 900;
-            border-radius: 25px 25px 0 0;
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
-            z-index: 9997;
-            animation: float-in 1s ease-out 2s forwards;
-        }
-
-        @keyframes float-in {
-            to { right: -50px; }
-        }
-
         /* HERO SECTION PREMIUM */
         .hero {
-            padding: 100px 15px 80px;
+            padding: 80px 15px 80px;
             text-align: center;
             background: 
                 radial-gradient(circle at 25% 25%, rgba(0, 255, 65, 0.15), transparent 50%),
@@ -783,311 +717,185 @@
             line-height: 1;
         }
 
-        /* CONTADOR DE VENDAS AVANÇADO */
-        .sales-counter {
+        /* NOVO SISTEMA DE NOTIFICAÇÕES MODERNO */
+        #modern-notifications {
             position: fixed;
-            top: 25px;
-            right: 25px;
-            background: var(--gradient-danger);
-            color: #fff;
-            padding: 15px 20px;
-            border-radius: 35px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 800;
-            font-size: 14px;
-            box-shadow: var(--shadow-red);
+            top: 80px;
+            right: 20px;
             z-index: 9999;
-            animation: counter-supreme 4s infinite;
-            border: 3px solid rgba(255, 255, 255, 0.3);
+            max-width: 350px;
+            width: 100%;
+        }
+
+        .modern-notification {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%);
+            border: 1px solid var(--accent-green);
+            border-radius: 15px;
+            padding: 15px 20px;
+            margin-bottom: 10px;
             backdrop-filter: blur(20px);
-        }
-
-        @keyframes counter-supreme {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) scale(1); }
-            10% { transform: translateY(-10px) scale(1.08); }
-            30% { transform: translateY(-5px) scale(1.04); }
-        }
-
-        .sales-counter .fire-icon {
-            animation: fire-supreme 2s infinite alternate;
-            margin-right: 10px;
-            filter: drop-shadow(0 0 8px #ffa726);
-        }
-
-        @keyframes fire-supreme {
-            0% { transform: scale(1) rotate(-5deg); }
-            100% { transform: scale(1.2) rotate(5deg); }
-        }
-
-        /* SISTEMA DE NOTIFICAÇÕES ULTRA AVANÇADO */
-        #notification-container {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            z-index: 10000;
-            max-width: 420px;
-        }
-
-        .notification-wrapper {
-            position: relative;
-            margin-bottom: 20px;
-            transform: translateX(-150%);
-            transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        .notification-wrapper.show {
-            transform: translateX(0);
-        }
-
-        .notification-wrapper.hide {
-            transform: translateX(-150%);
-            opacity: 0;
-        }
-
-        .purchase-notification {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
-            border: 3px solid transparent;
-            border-radius: 25px;
-            padding: 25px;
             box-shadow: 
-                0 25px 50px rgba(0, 0, 0, 0.8),
-                0 0 30px rgba(0, 255, 65, 0.5),
-                inset 0 2px 0 rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(25px);
+                0 8px 32px rgba(0, 0, 0, 0.8),
+                0 0 20px rgba(0, 255, 65, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transform: translateX(120%);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             position: relative;
             overflow: hidden;
-            font-family: 'Poppins', sans-serif;
         }
 
-        .purchase-notification::before {
+        .modern-notification::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-primary);
-            border-radius: 22px;
-            padding: 3px;
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask-composite: subtract;
-            animation: notification-border-supreme 5s ease-in-out infinite;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+            animation: shimmer 3s infinite;
         }
 
-        @keyframes notification-border-supreme {
-            0%, 100% { opacity: 0.8; }
-            50% { opacity: 1; }
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
         }
 
-        .urgency-notification {
-            background: linear-gradient(135deg, #1a0a0a 0%, #2a1010 50%, #1f0505 100%);
-            border: 3px solid var(--accent-red);
-            border-radius: 20px;
-            padding: 20px 25px;
-            box-shadow: var(--shadow-red);
-            animation: urgency-supreme-pulse 3s infinite;
+        .modern-notification.show {
+            transform: translateX(0);
+            opacity: 1;
         }
 
-        @keyframes urgency-supreme-pulse {
-            0%, 100% { 
-                box-shadow: var(--shadow-red);
-                transform: scale(1);
-            }
-            50% { 
-                box-shadow: 0 0 40px rgba(255, 71, 87, 0.8);
-                transform: scale(1.05);
-            }
-        }
-
-        .stock-notification {
-            background: linear-gradient(135deg, #0a1a0a 0%, #102a10 50%, #051f05 100%);
-            border: 3px solid var(--accent-gold);
-            border-radius: 20px;
-            padding: 20px 25px;
-            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.4);
+        .modern-notification.hide {
+            transform: translateX(120%);
+            opacity: 0;
         }
 
         .notification-header {
             display: flex;
             align-items: center;
-            gap: 20px;
-            margin-bottom: 15px;
+            gap: 12px;
+            margin-bottom: 8px;
         }
 
-        .notification-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
+        .notification-avatar {
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
+            background: var(--gradient-primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
+            font-size: 16px;
             color: #000;
+            font-weight: 700;
             position: relative;
-            box-shadow: 0 0 25px rgba(0, 255, 65, 0.7);
-            animation: icon-supreme-glow 3s ease-in-out infinite;
-            flex-shrink: 0;
+            animation: pulse-avatar 2s infinite;
         }
 
-        .notification-icon::before {
-            content: '';
-            position: absolute;
-            width: 65px;
-            height: 65px;
-            border: 3px solid rgba(0, 255, 65, 0.5);
-            border-radius: 50%;
-            animation: ripple-supreme 3s infinite;
-        }
-
-        @keyframes icon-supreme-glow {
-            0%, 100% { 
-                box-shadow: 0 0 25px rgba(0, 255, 65, 0.7);
-                transform: scale(1);
-            }
-            50% { 
-                box-shadow: 0 0 40px rgba(0, 255, 65, 1);
-                transform: scale(1.1);
-            }
-        }
-
-        @keyframes ripple-supreme {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1.5);
-                opacity: 0;
-            }
-        }
-
-        .urgency-icon {
-            background: var(--gradient-danger);
-            animation: urgency-shake-supreme 2s infinite;
-        }
-
-        .stock-icon {
-            background: var(--gradient-gold);
-        }
-
-        @keyframes urgency-shake-supreme {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-4px); }
-            75% { transform: translateX(4px); }
+        @keyframes pulse-avatar {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
         .notification-content {
             flex: 1;
-            min-width: 0;
         }
 
-        .notification-content h4 {
-            margin: 0 0 8px 0;
-            font-size: 17px;
-            font-weight: 800;
-            color: var(--accent-green) !important;
-            text-shadow: 0 0 15px rgba(0, 255, 65, 0.7);
-            line-height: 1.3;
-        }
-
-        .notification-content p {
-            margin: 0;
-            font-size: 14px;
-            color: var(--text-primary) !important;
-            line-height: 1.5;
-            font-weight: 500;
-        }
-
-        .notification-product {
+        .notification-name {
             font-weight: 700;
+            font-size: 14px;
             color: var(--accent-green) !important;
-            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+            margin-bottom: 2px;
         }
 
-        .notification-location {
-            color: var(--accent-green) !important;
-            font-weight: 600;
+        .notification-action {
+            font-size: 12px;
+            color: var(--text-secondary) !important;
+            line-height: 1.3;
         }
 
         .notification-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .notification-time {
-            font-size: 12px;
-            color: #ccc !important;
+            font-size: 10px;
+            color: #999 !important;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 4px;
         }
 
         .notification-value {
-            font-size: 15px;
+            font-size: 12px;
             font-weight: 700;
             color: var(--accent-green) !important;
-            text-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+            background: rgba(0, 255, 65, 0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
         }
 
         .notification-close {
             position: absolute;
-            top: 15px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.2);
+            top: 8px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.1);
             border: none;
             color: #fff;
             cursor: pointer;
-            font-size: 18px;
-            padding: 6px;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 14px;
+            padding: 2px 6px;
             border-radius: 50%;
             transition: all 0.3s ease;
+            opacity: 0.7;
         }
 
         .notification-close:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.2);
+            background: rgba(255, 255, 255, 0.2);
+            opacity: 1;
+            transform: scale(1.1);
         }
 
-        .sound-wave {
-            position: absolute;
-            top: 50%;
+        /* Contador de vendas moderno */
+        .sales-counter {
+            position: fixed;
+            bottom: 20px;
             right: 20px;
-            transform: translateY(-50%);
-            display: flex;
-            gap: 4px;
+            background: linear-gradient(135deg, var(--gradient-danger));
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            box-shadow: 0 8px 25px rgba(255, 71, 87, 0.4);
+            z-index: 9998;
+            animation: counter-bounce 3s infinite;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
 
-        .sound-bar {
-            width: 4px;
-            height: 20px;
-            background: var(--gradient-primary);
-            border-radius: 3px;
-            animation: sound-wave-supreme 2.5s infinite ease-in-out;
+        @keyframes counter-bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) scale(1); }
+            10% { transform: translateY(-5px) scale(1.05); }
+            30% { transform: translateY(-3px) scale(1.02); }
         }
 
-        .sound-bar:nth-child(2) { animation-delay: 0.1s; }
-        .sound-bar:nth-child(3) { animation-delay: 0.2s; }
-        .sound-bar:nth-child(4) { animation-delay: 0.3s; }
+        .fire-icon {
+            animation: fire-dance 2s infinite alternate;
+            margin-right: 8px;
+            filter: drop-shadow(0 0 5px #ffa726);
+        }
 
-        @keyframes sound-wave-supreme {
-            0%, 100% { 
-                height: 12px;
-                opacity: 0.6;
-            }
-            50% { 
-                height: 28px;
-                opacity: 1;
-            }
+        @keyframes fire-dance {
+            0% { transform: scale(1) rotate(-2deg); }
+            100% { transform: scale(1.1) rotate(2deg); }
         }
 
         /* SEÇÃO DE GARANTIA PREMIUM */
@@ -1184,16 +992,6 @@
                 padding: 15px;
             }
             
-            .scarcity-timer {
-                font-size: 1.1rem;
-                padding: 12px 20px;
-                top: 80px;
-            }
-            
-            .floating-discount {
-                display: none;
-            }
-            
             .hero {
                 padding: 80px 15px 60px;
                 min-height: auto;
@@ -1208,103 +1006,47 @@
                 padding: 20px 35px;
             }
             
-            #notification-container {
-                left: 15px;
-                right: 15px;
-                max-width: calc(100% - 30px);
-                bottom: 15px;
+            #modern-notifications {
+                top: 60px;
+                right: 10px;
+                left: 10px;
+                max-width: calc(100% - 20px);
             }
             
-            .notification-wrapper {
-                transform: translateY(150%);
-                margin-bottom: 15px;
+            .modern-notification {
+                padding: 12px 15px;
+                border-radius: 12px;
             }
             
-            .notification-wrapper.show {
-                transform: translateY(0);
+            .notification-avatar {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
             }
             
-            .notification-wrapper.hide {
-                transform: translateY(150%);
-            }
-            
-            .purchase-notification, .urgency-notification, .stock-notification {
-                padding: 20px;
-                border-radius: 20px;
-            }
-            
-            .notification-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 18px;
-            }
-            
-            .notification-icon::before {
-                width: 52px;
-                height: 52px;
-            }
-            
-            .notification-header {
-                gap: 15px;
-                margin-bottom: 12px;
-            }
-            
-            .notification-content h4 {
-                font-size: 15px;
-            }
-            
-            .notification-content p {
+            .notification-name {
                 font-size: 13px;
-                line-height: 1.4;
             }
             
-            .notification-footer {
-                margin-top: 12px;
-                padding-top: 12px;
-            }
-            
-            .notification-time {
+            .notification-action {
                 font-size: 11px;
             }
             
+            .notification-time {
+                font-size: 9px;
+            }
+            
             .notification-value {
-                font-size: 13px;
-            }
-            
-            .notification-close {
-                top: 12px;
-                right: 15px;
-                width: 25px;
-                height: 25px;
-                font-size: 16px;
-            }
-            
-            .sound-wave {
-                right: 15px;
-            }
-            
-            .sound-bar {
-                width: 3px;
-                height: 15px;
-            }
-            
-            @keyframes sound-wave-supreme {
-                0%, 100% { 
-                    height: 8px;
-                    opacity: 0.6;
-                }
-                50% { 
-                    height: 20px;
-                    opacity: 1;
-                }
+                font-size: 11px;
+                padding: 2px 6px;
             }
             
             .sales-counter {
-                top: 15px;
+                bottom: 15px;
                 right: 15px;
                 font-size: 12px;
-                padding: 12px 16px;
-                border-radius: 30px;
+                padding: 10px 15px;
+                border-radius: 20px;
             }
             
             .package-card {
@@ -1499,20 +1241,13 @@
         <strong>🚨 ÚLTIMA CHANCE! DESCONTO DE 87% EXPIRA EM BREVE! APENAS HOJE! 🚨</strong>
     </div>
 
-   
-
-    <!-- Floating Discount Badge -->
-    <div class="floating-discount">
-        🔥 87% OFF HOJE!
-    </div>
-
-    <!-- Contador de Vendas Supreme -->
+    <!-- Contador de Vendas Moderno -->
     <div class="sales-counter">
         <i class="fas fa-fire fire-icon"></i> <span id="sales-count">347</span> vendas nas últimas 24h!
     </div>
 
-    <!-- Container para Notificações Ultra Avançadas -->
-    <div id="notification-container"></div>
+    <!-- Novo Sistema de Notificações Moderno -->
+    <div id="modern-notifications"></div>
 
     <!-- Sticky CTA Button -->
     <div class="sticky-cta" id="stickyCta">
@@ -2086,7 +1821,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Sistema JavaScript Ultra Avançado -->
+    <!-- NOVO SISTEMA JAVASCRIPT PARA NOTIFICAÇÕES MODERNAS -->
     <script>
         // Sistema de Loading Premium
         class LoadingSystem {
@@ -2096,7 +1831,6 @@
             }
             
             init() {
-                // Simular carregamento premium
                 setTimeout(() => {
                     this.hideLoading();
                 }, 2000);
@@ -2107,40 +1841,6 @@
                 setTimeout(() => {
                     this.loadingScreen.style.display = 'none';
                 }, 800);
-            }
-        }
-        
-        // Sistema de Timer de Escassez
-        class ScarcityTimer {
-            constructor() {
-                this.hoursElement = document.getElementById('hours');
-                this.minutesElement = document.getElementById('minutes');
-                this.secondsElement = document.getElementById('seconds');
-                
-                // Definir tempo inicial (1 hora e 47 minutos)
-                this.totalSeconds = (1 * 3600) + (47 * 60) + 33;
-                this.init();
-            }
-            
-            init() {
-                this.updateDisplay();
-                setInterval(() => {
-                    this.totalSeconds--;
-                    if (this.totalSeconds <= 0) {
-                        this.totalSeconds = (1 * 3600) + (47 * 60) + 33; // Reset
-                    }
-                    this.updateDisplay();
-                }, 1000);
-            }
-            
-            updateDisplay() {
-                const hours = Math.floor(this.totalSeconds / 3600);
-                const minutes = Math.floor((this.totalSeconds % 3600) / 60);
-                const seconds = this.totalSeconds % 60;
-                
-                this.hoursElement.textContent = hours.toString().padStart(2, '0');
-                this.minutesElement.textContent = minutes.toString().padStart(2, '0');
-                this.secondsElement.textContent = seconds.toString().padStart(2, '0');
             }
         }
         
@@ -2185,14 +1885,13 @@
             }
         }
         
-        // Sistema Avançado de Notificações Ultra Premium
-        class UltraNotificationSystem {
+        // NOVO SISTEMA DE NOTIFICAÇÕES MODERNO
+        class ModernNotificationSystem {
             constructor() {
-                this.container = document.getElementById('notification-container');
+                this.container = document.getElementById('modern-notifications');
                 this.salesCounter = document.getElementById('sales-count');
                 this.userCounter = document.getElementById('contador-pessoas');
                 
-                // Dados do sistema
                 this.currentSales = 347;
                 this.currentUsers = 2847;
                 this.activeNotifications = [];
@@ -2200,26 +1899,26 @@
                 
                 // Base de dados ultra realista
                 this.customerDatabase = [
-                    { name: 'João Silva', location: 'São Paulo - SP', avatar: '👨‍💼' },
-                    { name: 'Maria Santos', location: 'Rio de Janeiro - RJ', avatar: '👩‍💼' },
-                    { name: 'Pedro Costa', location: 'Belo Horizonte - MG', avatar: '👨‍🎓' },
-                    { name: 'Ana Oliveira', location: 'Salvador - BA', avatar: '👩‍🎓' },
-                    { name: 'Carlos Souza', location: 'Brasília - DF', avatar: '👨‍💻' },
-                    { name: 'Lucia Ferreira', location: 'Fortaleza - CE', avatar: '👩‍💻' },
-                    { name: 'Rafael Lima', location: 'Recife - PE', avatar: '👨‍🔧' },
-                    { name: 'Camila Rocha', location: 'Porto Alegre - RS', avatar: '👩‍🔬' },
-                    { name: 'Bruno Alves', location: 'Curitiba - PR', avatar: '👨‍🏫' },
-                    { name: 'Fernanda Dias', location: 'Goiânia - GO', avatar: '👩‍🏫' },
-                    { name: 'Gabriel Torres', location: 'Manaus - AM', avatar: '👨‍🎨' },
-                    { name: 'Juliana Pereira', location: 'Belém - PA', avatar: '👩‍🎨' },
-                    { name: 'Ricardo Nunes', location: 'Vitória - ES', avatar: '👨‍⚕️' },
-                    { name: 'Patrícia Gomes', location: 'Florianópolis - SC', avatar: '👩‍⚕️' },
-                    { name: 'Leonardo Barbosa', location: 'Natal - RN', avatar: '👨‍🚀' },
-                    { name: 'Thiago Oliveira', location: 'Campo Grande - MS', avatar: '👨‍💼' },
-                    { name: 'Isabela Costa', location: 'João Pessoa - PB', avatar: '👩‍💼' },
-                    { name: 'Rodrigo Silva', location: 'Teresina - PI', avatar: '👨‍🎓' },
-                    { name: 'Amanda Santos', location: 'Aracaju - SE', avatar: '👩‍🎓' },
-                    { name: 'Felipe Rocha', location: 'Maceió - AL', avatar: '👨‍💻' }
+                    { name: 'João S.', location: 'São Paulo - SP', initial: 'J' },
+                    { name: 'Maria O.', location: 'Rio de Janeiro - RJ', initial: 'M' },
+                    { name: 'Pedro C.', location: 'Belo Horizonte - MG', initial: 'P' },
+                    { name: 'Ana L.', location: 'Salvador - BA', initial: 'A' },
+                    { name: 'Carlos R.', location: 'Brasília - DF', initial: 'C' },
+                    { name: 'Lucia F.', location: 'Fortaleza - CE', initial: 'L' },
+                    { name: 'Rafael L.', location: 'Recife - PE', initial: 'R' },
+                    { name: 'Camila R.', location: 'Porto Alegre - RS', initial: 'C' },
+                    { name: 'Bruno A.', location: 'Curitiba - PR', initial: 'B' },
+                    { name: 'Fernanda D.', location: 'Goiânia - GO', initial: 'F' },
+                    { name: 'Gabriel T.', location: 'Manaus - AM', initial: 'G' },
+                    { name: 'Juliana P.', location: 'Belém - PA', initial: 'J' },
+                    { name: 'Ricardo N.', location: 'Vitória - ES', initial: 'R' },
+                    { name: 'Patrícia G.', location: 'Florianópolis - SC', initial: 'P' },
+                    { name: 'Leonardo B.', location: 'Natal - RN', initial: 'L' },
+                    { name: 'Thiago O.', location: 'Campo Grande - MS', initial: 'T' },
+                    { name: 'Isabela C.', location: 'João Pessoa - PB', initial: 'I' },
+                    { name: 'Rodrigo S.', location: 'Teresina - PI', initial: 'R' },
+                    { name: 'Amanda S.', location: 'Aracaju - SE', initial: 'A' },
+                    { name: 'Felipe R.', location: 'Maceió - AL', initial: 'F' }
                 ];
                 
                 this.products = [
@@ -2228,14 +1927,12 @@
                     { name: 'Painel CLT VIP', price: 'R$ 49,90', popularity: 25 }
                 ];
                 
-                this.urgencyMessages = [
-                    '🚨 ÚLTIMAS UNIDADES DISPONÍVEIS!',
-                    '🔥 PROMOÇÃO ACABANDO EM BREVE!',
-                    '⏰ OFERTA VÁLIDA SÓ HOJE!',
-                    '💥 DESCONTO RELÂMPAGO!',
-                    '⚡ ESTOQUE LIMITADO!',
-                    '🎯 APENAS PARA OS PRIMEIROS!',
-                    '🏃‍♂️ CORRE QUE ESTÁ ACABANDO!'
+                this.actions = [
+                    'acabou de comprar o',
+                    'adquiriu o',
+                    'confirmou a compra do',
+                    'finalizou a compra do',
+                    'garantiu o'
                 ];
                 
                 this.init();
@@ -2244,60 +1941,35 @@
             init() {
                 this.startCounterUpdates();
                 this.startNotificationFlow();
-                this.startUrgencyAlerts();
-                this.startStockAlerts();
             }
             
-            // Atualização dos contadores em tempo real
             startCounterUpdates() {
                 // Contador de usuários ativos
                 setInterval(() => {
-                    const increase = Math.floor(Math.random() * 12) + 3;
+                    const increase = Math.floor(Math.random() * 8) + 2;
                     this.currentUsers += increase;
                     if (this.userCounter) {
                         this.userCounter.textContent = this.currentUsers.toLocaleString();
                     }
-                }, Math.random() * 5000 + 4000);
+                }, Math.random() * 6000 + 5000);
                 
                 // Contador de vendas
                 setInterval(() => {
-                    const increase = Math.floor(Math.random() * 6) + 1;
+                    const increase = Math.floor(Math.random() * 4) + 1;
                     this.currentSales += increase;
                     if (this.salesCounter) {
                         this.salesCounter.textContent = this.currentSales;
                     }
-                }, Math.random() * 10000 + 7000);
+                }, Math.random() * 12000 + 8000);
             }
             
-            // Fluxo principal de notificações
             startNotificationFlow() {
                 this.showPurchaseNotification();
                 
-                const nextNotification = Math.random() * 10000 + 8000;
+                const nextNotification = Math.random() * 8000 + 6000;
                 setTimeout(() => this.startNotificationFlow(), nextNotification);
             }
             
-            // Alertas de urgência
-            startUrgencyAlerts() {
-                setTimeout(() => {
-                    this.showUrgencyNotification();
-                    
-                    const nextUrgency = Math.random() * 30000 + 25000;
-                    setTimeout(() => this.startUrgencyAlerts(), nextUrgency);
-                }, Math.random() * 20000 + 15000);
-            }
-            
-            // Alertas de estoque
-            startStockAlerts() {
-                setTimeout(() => {
-                    this.showStockNotification();
-                    
-                    const nextStock = Math.random() * 40000 + 35000;
-                    setTimeout(() => this.startStockAlerts(), nextStock);
-                }, Math.random() * 25000 + 20000);
-            }
-            
-            // Notificação de compra ultra premium
             showPurchaseNotification() {
                 if (this.activeNotifications.length >= this.maxNotifications) {
                     this.removeOldestNotification();
@@ -2305,148 +1977,61 @@
                 
                 const customer = this.getRandomCustomer();
                 const product = this.getRandomProduct();
-                const timeAgo = Math.floor(Math.random() * 60) + 2;
+                const action = this.actions[Math.floor(Math.random() * this.actions.length)];
+                const timeAgo = Math.floor(Math.random() * 45) + 2;
+                const id = Date.now();
                 
-                const notification = this.createNotificationElement('purchase', {
+                const notification = this.createNotificationElement({
                     customer,
                     product,
+                    action,
                     timeAgo,
-                    id: Date.now()
+                    id
                 });
                 
                 this.showNotification(notification);
             }
             
-            // Notificação de urgência
-            showUrgencyNotification() {
-                if (this.activeNotifications.length >= this.maxNotifications) {
-                    this.removeOldestNotification();
-                }
-                
-                const message = this.urgencyMessages[Math.floor(Math.random() * this.urgencyMessages.length)];
-                const remaining = Math.floor(Math.random() * 20) + 5;
-                
-                const notification = this.createNotificationElement('urgency', {
-                    message,
-                    remaining,
-                    id: Date.now()
-                });
-                
-                this.showNotification(notification);
-            }
-            
-            // Notificação de estoque
-            showStockNotification() {
-                if (this.activeNotifications.length >= this.maxNotifications) {
-                    this.removeOldestNotification();
-                }
-                
-                const product = this.getRandomProduct();
-                const viewers = Math.floor(Math.random() * 35) + 12;
-                
-                const notification = this.createNotificationElement('stock', {
-                    product,
-                    viewers,
-                    id: Date.now()
-                });
-                
-                this.showNotification(notification);
-            }
-            
-            // Criar elemento de notificação ultra premium
-            createNotificationElement(type, data) {
+            createNotificationElement(data) {
                 const wrapper = document.createElement('div');
-                wrapper.className = 'notification-wrapper';
+                wrapper.className = 'modern-notification';
                 wrapper.dataset.id = data.id;
                 
-                let content = '';
+                wrapper.innerHTML = `
+                    <button class="notification-close" onclick="modernNotificationSystem.removeNotification(${data.id})">&times;</button>
+                    <div class="notification-header">
+                        <div class="notification-avatar">${data.customer.initial}</div>
+                        <div class="notification-content">
+                            <div class="notification-name">${data.customer.name}</div>
+                            <div class="notification-action">${data.action} ${data.product.name}</div>
+                        </div>
+                    </div>
+                    <div class="notification-footer">
+                        <div class="notification-time">
+                            <i class="fas fa-clock"></i> ${data.timeAgo} min atrás
+                        </div>
+                        <div class="notification-value">${data.product.price}</div>
+                    </div>
+                `;
                 
-                switch (type) {
-                    case 'purchase':
-                        content = `
-                            <div class="purchase-notification">
-                                <button class="notification-close" onclick="ultraNotificationSystem.removeNotification(${data.id})">&times;</button>
-                                <div class="notification-header">
-                                    <div class="notification-icon">
-                                        <i class="fas fa-check"></i>
-                                    </div>
-                                    <div class="notification-content">
-                                        <h4>🎉 Nova Compra Confirmada!</h4>
-                                        <p><strong>${data.customer.avatar} ${data.customer.name}</strong> de <span class="notification-location">${data.customer.location}</span> acabou de adquirir o <span class="notification-product">${data.product.name}</span></p>
-                                    </div>
-                                </div>
-                                <div class="notification-footer">
-                                    <div class="notification-time">
-                                        <i class="fas fa-clock"></i> ${data.timeAgo} min atrás
-                                    </div>
-                                    <div class="notification-value">${data.product.price}</div>
-                                </div>
-                                <div class="sound-wave">
-                                    <div class="sound-bar"></div>
-                                    <div class="sound-bar"></div>
-                                    <div class="sound-bar"></div>
-                                    <div class="sound-bar"></div>
-                                </div>
-                            </div>
-                        `;
-                        break;
-                        
-                    case 'urgency':
-                        content = `
-                            <div class="urgency-notification">
-                                <button class="notification-close" onclick="ultraNotificationSystem.removeNotification(${data.id})">&times;</button>
-                                <div class="notification-header">
-                                    <div class="notification-icon urgency-icon">
-                                        <i class="fas fa-exclamation"></i>
-                                    </div>
-                                    <div class="notification-content">
-                                        <h4 style="color: #ff4757;">${data.message}</h4>
-                                        <p>Apenas <strong style="color: #ff4757;">${data.remaining} unidades</strong> restantes com desconto especial!</p>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        break;
-                        
-                    case 'stock':
-                        content = `
-                            <div class="stock-notification">
-                                <button class="notification-close" onclick="ultraNotificationSystem.removeNotification(${data.id})">&times;</button>
-                                <div class="notification-header">
-                                    <div class="notification-icon stock-icon">
-                                        <i class="fas fa-eye"></i>
-                                    </div>
-                                    <div class="notification-content">
-                                        <h4 style="color: #ffa726;">👀 Alta Demanda!</h4>
-                                        <p><strong style="color: #ffa726;">${data.viewers} pessoas</strong> estão visualizando o <span class="notification-product">${data.product.name}</span> neste momento!</p>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        break;
-                }
-                
-                wrapper.innerHTML = content;
                 return wrapper;
             }
             
-            // Mostrar notificação com animação premium
             showNotification(notification) {
                 this.container.appendChild(notification);
                 this.activeNotifications.push(notification);
                 
-                // Animação de entrada premium
+                // Animação de entrada
                 setTimeout(() => {
                     notification.classList.add('show');
                 }, 150);
                 
-                // Auto-remover após 8 segundos
+                // Auto-remover após 6 segundos
                 setTimeout(() => {
                     this.removeNotification(parseInt(notification.dataset.id));
-                }, 8000);
+                }, 6000);
             }
             
-            // Remover notificação
             removeNotification(id) {
                 const notification = document.querySelector(`[data-id="${id}"]`);
                 if (notification) {
@@ -2459,11 +2044,10 @@
                         this.activeNotifications = this.activeNotifications.filter(n => 
                             parseInt(n.dataset.id) !== id
                         );
-                    }, 800);
+                    }, 600);
                 }
             }
             
-            // Remover notificação mais antiga
             removeOldestNotification() {
                 if (this.activeNotifications.length > 0) {
                     const oldest = this.activeNotifications[0];
@@ -2471,12 +2055,10 @@
                 }
             }
             
-            // Obter cliente aleatório
             getRandomCustomer() {
                 return this.customerDatabase[Math.floor(Math.random() * this.customerDatabase.length)];
             }
             
-            // Obter produto aleatório baseado em popularidade
             getRandomProduct() {
                 const rand = Math.random() * 100;
                 let cumulative = 0;
@@ -2499,7 +2081,6 @@
             }
             
             init() {
-                // Scroll suave para links âncora
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     anchor.addEventListener('click', function (e) {
                         e.preventDefault();
@@ -2523,7 +2104,6 @@
             }
             
             init() {
-                // Intersection Observer para animações
                 this.observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
@@ -2536,7 +2116,6 @@
                     rootMargin: '0px 0px -50px 0px'
                 });
                 
-                // Observar elementos com animação
                 document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right').forEach(el => {
                     el.style.opacity = '0';
                     el.style.transform = 'translateY(50px)';
@@ -2546,29 +2125,25 @@
             }
         }
         
-        // Inicializar todos os sistemas quando a página carregar
+        // Inicializar todos os sistemas
         let loadingSystem;
-        let scarcityTimer;
         let scrollProgress;
         let stickyCTA;
-        let ultraNotificationSystem;
+        let modernNotificationSystem;
         let smoothScroll;
         let animationSystem;
         
         document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar sistemas em ordem
             loadingSystem = new LoadingSystem();
-            scarcityTimer = new ScarcityTimer();
             scrollProgress = new ScrollProgress();
             stickyCTA = new StickyCTA();
-            ultraNotificationSystem = new UltraNotificationSystem();
+            modernNotificationSystem = new ModernNotificationSystem();
             smoothScroll = new SmoothScroll();
             animationSystem = new AnimationSystem();
             
-            // Tracking de eventos para analytics
+            // Tracking de eventos
             document.querySelectorAll('.btn-cta-supreme').forEach(button => {
                 button.addEventListener('click', function() {
-                    // Tracking de clique no CTA
                     if (typeof fbq !== 'undefined') {
                         fbq('track', 'AddToCart');
                     }
@@ -2591,10 +2166,9 @@
             });
         });
         
-        // Prevenção de saída da página (Exit Intent)
+        // Prevenção de saída da página
         document.addEventListener('mouseleave', function(e) {
             if (e.clientY <= 0) {
-                // Usuário está tentando sair da página
                 if (typeof fbq !== 'undefined') {
                     fbq('track', 'ExitIntent');
                 }
